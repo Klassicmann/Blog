@@ -39,6 +39,7 @@ def deletePost(request, pk):
         return HttpResponse('Post not found')
     
 def updatePost(request, pk):
+    print(pk)
     post = Post.objects.get(pk=pk)
     form = PostForm(instance=post)
     if request.method == 'POST':
